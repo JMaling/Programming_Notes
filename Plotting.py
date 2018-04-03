@@ -54,6 +54,26 @@ for i in range(len(country_names)):
     plt.annotate(country_names[i], xy = (firearm_per[i], hom_per[i])) # text, xy = (x, y)
 plt.show()
 
+# Sorting Using Sort, Sorted, and Lambda Functions
+my_list = [5, 2, 8, 1, 7, 3]
+my_list.sort() # sort in place using the sort method
+print(my_list)
+my_list = sorted(my_list) # uses the sorted function to return a sorted list
+my_list = [[5, 2], [8, 1], [7, 3]]
+my_list.sort() # sorts the ordered list by the first value in the sub-list
+# sort and sorted take a function by a parameter
+# use a lambda function
+# lambda parameters: returned value
+square = lambda x: x ** 2
+print(square(9))
+product = lambda x, y: x * y
+print(product(5, 10))
+# sorting with lambda functions
+my_list = [[5, 2], [8, 1], [7, 3]]
+my_list.sort(key = lambda x: x[1]) # sorts according to the second value in the list
+print(my_list)
+
+
 
 
 
