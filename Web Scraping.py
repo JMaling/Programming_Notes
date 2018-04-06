@@ -28,11 +28,31 @@ print(einstein)
 quotes = soup.findAll("span", class_="text")
 for quote in quotes:
     print(quote.text) # the .text strips out any extraneous HTML, and leaves you just with the text
-
 # Find All The Authors
 authors = soup.findAll("small", class_="author")
 for i in range(len(quotes)):
     print(quotes[i].text)
     print("- ", authors[i].text, "\n")
 
+# Regal Webster Place 11 Scrape
+url = "https://www.regmovies.com/theaters/regal-webster-place-11/C00129681357"
+page = requests.get(url)
+# print(page.text)
+soup = BeautifulSoup(page.text, "html.parser")
+# print(soup.prettify())
 
+titles = soup.findAll("h3", class_="title") # tagname, class
+for i in range(len(titles)):
+    print(titles[i].text) # takes a single item in the list, and then prints all the text elements of it
+showtimes = soup.findAll("ul", class_="format-showtimes")
+print(showtimes[0].text)
+movietimes= []
+for time in showtimes:
+    movietime = time.findAll("li", class_="showtime-entry")
+    movietimes.append(movietime)
+    print(movietimes)
+for i in range(11):
+    print("\n")
+    print(titles[i].text)
+    for time in movietimes[i]:
+        print(time.text)
