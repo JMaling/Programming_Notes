@@ -1,0 +1,19 @@
+QLabel {
+    color: "blue";
+    font-family: "Courier New";
+    font-size: 17px;
+}
+
+QLabel#title {
+    color: "navy";
+    font-size: 20px;
+}
+
+QLineEdit {
+    width: 100px;
+        background-color: "White";
+
+}
+
+QWidget {
+}
